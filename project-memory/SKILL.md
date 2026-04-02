@@ -70,7 +70,6 @@ Use this exact section order and headings:
 7. `## Next Steps (Executable)`
 8. `## Session Summary`
    - `### This Session`
-   - `### Handoff Prompt`
 
 Keep entries concise, dated, and implementation-oriented.
 
@@ -193,8 +192,6 @@ If `docs/project_log.md` does not exist, create this starter content:
 ### This Session
 - Created initial memory file.
 
-### Handoff Prompt
-Read docs/project_log.md, follow Constraints and Architecture Guardrails, continue from In Progress and execute Next Steps only.
 ```
 
 ---
@@ -207,7 +204,6 @@ Before finishing any session memory update, verify:
 - In Progress contains exactly what is currently active.
 - Next Steps are actionable within one coding session.
 - At least one rationale-backed decision exists if non-trivial choices were made.
-- Handoff Prompt is present.
 
 ---
 

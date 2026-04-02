@@ -1,11 +1,11 @@
 ---
 name: session-log
-description: Create or update concise per-session markdown work logs for ongoing projects. Use when the user wants to save, wrap up, archive, or summarize the current Codex conversation into `docs/session_logs/`, especially for cross-session handoff. This skill records only session-specific incremental work, decisions, blockers, and next actions; keep project-wide truth in `docs/project_log.md` via project-memory.
+description: Create or update concise per-session markdown work logs for ongoing projects. Use when the user wants to save, wrap up, archive, or summarize the current Codex conversation into `docs/session_logs/`. This skill records only session-specific incremental work, decisions, blockers, and next actions; keep project-wide truth in `docs/project_log.md` via project-memory.
 ---
 
 # Session Log
 
-Maintain a concise, handoff-ready markdown log for one Codex session.
+Maintain a concise markdown log for one Codex session.
 
 ## Workflow
 
@@ -30,9 +30,8 @@ Maintain a concise, handoff-ready markdown log for one Codex session.
    - State whether the important conclusions of this session were already synced to `docs/project_log.md`.
    - If not synced, say so explicitly.
 
-5. End with a direct handoff.
-   - Write concrete next actions.
-   - Include a prompt that a future Codex instance can use to resume work quickly.
+5. Finish with concrete next actions.
+   - Write only executable follow-up work.
 
 ## File Contract
 
@@ -56,7 +55,6 @@ Use this exact section order and headings:
 9. `## Current Blockers`
 10. `## Stop Reason`
 11. `## Next Actions`
-12. `## Handoff Prompt`
 
 ## Section Rules
 
@@ -152,15 +150,6 @@ Bad:
 
 - [ ] Keep improving things.
 
-### Handoff Prompt
-
-Provide a short prompt a future Codex instance can use directly.
-
-The prompt should usually instruct Codex to read:
-
-- `docs/project_log.md`
-- the latest relevant file under `docs/session_logs/`
-
 ## Content Rules
 
 - Prefer bullets over long paragraphs.
@@ -186,7 +175,7 @@ Recommended end-of-session order:
 
 1. Write the session log
 2. Promote durable conclusions into `docs/project_log.md` if requested
-3. Return a handoff prompt
+3. Stop after recording the updated session state
 
 ## Prompt Recipes
 
@@ -196,7 +185,7 @@ Use when the user says "write a session log", "save this conversation", or "wrap
 
 ```text
 Summarize this Codex session into docs/session_logs using the session-log skill.
-Record user intent, completed work, implemented artifacts, discussed-only items, decisions, blockers, stop reason, next actions, and a handoff prompt.
+Record user intent, completed work, implemented artifacts, discussed-only items, decisions, blockers, stop reason, and next actions.
 Do not duplicate full project state from docs/project_log.md.
 ```
 
@@ -227,7 +216,6 @@ Before finishing, verify:
 - Implemented and Discussed Only are separated.
 - The stop reason explains why the session ended here.
 - Next Actions are specific enough for immediate execution.
-- The handoff prompt is directly reusable.
 
 ## Non-Goals
 
